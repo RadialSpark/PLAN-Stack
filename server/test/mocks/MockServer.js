@@ -1,12 +1,14 @@
 'use strict';
 
-function MockServer() {
+function MockServer(db) {
   this.isAuthEnabled = false;
   this.enabledValues = {};
   this.middleware = [];
   this.engines = {};
   this.urlHandlers = {};
   this.setValues = {};
+  this.dataSources = {};
+  if (db) this.dataSources[db.name] = db;
 }
 
 MockServer.prototype.enableAuth = function() {
