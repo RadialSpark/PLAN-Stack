@@ -1,2 +1,3 @@
-# PLAN-Stack
-Quickstart for Loopback, Angular, and PostgreSQL
+# LAN STACK
+Quickstart for building Loopback/Angular applications
+
