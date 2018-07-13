@@ -1,4 +1,4 @@
-# PLAN Stack
+# PLAN Stack [![CircleCI](https://circleci.com/gh/RadialSpark/PLAN-Stack.svg?style=svg&circle-token=0052a6d9e642906f6612bc339d6d007b70a7e2c3)](https://circleci.com/gh/RadialSpark/PLAN-Stack)
 
 Quickstart for building Angular, Loopback, and PostgreSQL applications
 
