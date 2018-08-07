@@ -10,9 +10,11 @@ const TABLES = [
 
 module.exports = (server) => {
   const db = server.dataSources.db;
-  // loopback sometimes throws warnings when dealing with large amounts of tables and relations
+  // loopback sometimes throws warnings when dealing with large amounts
+  // of tables and relations
   db.setMaxListeners(TABLES.length * 2);
-  db.connector.execute('CREATE SCHEMA IF NOT EXISTS PlanSchema', (err, results) => {
+  db.connector.execute('CREATE SCHEMA IF NOT EXISTS PlanSchema', (err) => {
+    if (err) return callback(err);
     db.isActual(TABLES, (err, isActual) => {
       if (err) return callback(err);
       if (isActual) {
