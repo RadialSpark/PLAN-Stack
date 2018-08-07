@@ -1,13 +1,13 @@
 {
-  "name": "lan-stack",
+  "name": "plan-stack",
   "version": "1.0.0",
-  "description": "QuickStart for lan applicaitons",
+  "description": "QuickStart for plan applicaitons",
   "main": "server/server.js",
   "directories": {
     "doc": "docs"
   },
   "engines": {
-    "node": "8.10.0"
+    "node": "10.8.0"
   },
   "scripts": {
     "start": "node .",
@@ -17,11 +17,15 @@
     "serve": "npm run buildEnv && ng serve",
     "build:client": "ng build --prod",
     "build:server": "ng build --prod --app 1 --output-hashing=false",
-    "lint": "ng lint",
+    "lint": "npm run lint:server && npm run lint:client",
+    "lint:client": "ng lint",
+    "lint:server": "node ./node_modules/eslint/bin/eslint.js server",
+    "audit": "node ./audit.js",
     "e2e": "ng e2e",
     "test:server": "nyc mocha server/test/**/*.test.js --timeout 10000",
     "test:client": "ng test --code-coverage --reporters=coverage-istanbul",
-    "test": "npm run test:server && npm run test:client"
+    "test": "npm run test:server && npm run test:client",
+    "validate": "npm run audit && npm run test && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -49,11 +53,11 @@
     "core-js": "^2.4.1",
     "cors": "^2.5.2",
     "dotenv": "^6.0.0",
-    "helmet": "^1.3.0",
-    "loopback": "^3.0.0",
+    "helmet": "^3.13.0",
+    "loopback": "^3.21.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^5.0.0",
-    "loopback-connector-postgresql": "^3.3.2",
+    "loopback-connector-postgresql": "^3.4.0",
     "rxjs": "^5.5.6",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0",
@@ -69,21 +73,21 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "chai": "3.5.0",
-    "chai-http": "3.0.0",
+    "chai-http": "^4.0.0",
     "codelyzer": "^4.0.1",
-    "eslint": "^3.17.1",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.9.1",
     "eslint-config-loopback": "^8.0.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.0",
+    "karma": "^2.0.5",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "mocha": "3.2.0",
-    "nsp": "^2.1.0",
-    "nyc": "^11.6.0",
-    "protractor": "~5.1.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "protractor": "^5.4.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
@@ -113,10 +117,8 @@
       "text-summary"
     ],
     "require": [],
-    "extension": [
-      ".jsx"
-    ],
-    "cache": true,
+    "extension": [],
+    "cache": false,
     "all": true
   }
 }

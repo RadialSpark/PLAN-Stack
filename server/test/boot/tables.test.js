@@ -3,7 +3,7 @@
 const PROJECT_DIR = require('../../../settings').PROJECT_DIR;
 
 const MockServer = require(`${PROJECT_DIR}/server/test/mocks/MockServer`);
-const MockDb = require(`${PROJECT_DIR}/server/test/mocks/MockDb`)
+const MockDb = require(`${PROJECT_DIR}/server/test/mocks/MockDb`);
 const tables = require(`${PROJECT_DIR}/server/boot/05-tables`);
 const expect = require('chai').expect;
 
