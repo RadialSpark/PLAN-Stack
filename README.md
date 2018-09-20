@@ -19,7 +19,7 @@ Clone the repository into a terminal opening a terminal, navigate to the desired
 
 ```
 cd myProjectFolder
-git clone https://github.com/RadialSpark/www-radialspark-com.git
+git clone https://github.com/RadialSpark/PLAN-Stack.git
 ```
 
 In the terminal, navigate to the root directory and install all of the project dependencies.
